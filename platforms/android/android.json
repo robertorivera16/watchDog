@@ -23,7 +23,7 @@
                 "parents": {
                     "/resources": [
                         {
-                            "xml": "<string name=\"google_app_id\">60315608913</string>",
+                            "xml": "<string name=\"google_app_id\" translatable=\"false\">738883844373</string>",
                             "count": 1
                         }
                     ]
@@ -53,17 +53,25 @@
                             "count": 1
                         },
                         {
-                            "xml": "<permission android:name=\"io.cordova.hellocordova.permission.C2D_MESSAGE\" android:protectionLevel=\"signature\" />",
+                            "xml": "<uses-permission android:name=\"${applicationId}.permission.C2D_MESSAGE\" />",
                             "count": 1
                         },
                         {
-                            "xml": "<uses-permission android:name=\"io.cordova.hellocordova.permission.C2D_MESSAGE\" />",
+                            "xml": "<uses-permission android:name=\"${applicationId}.permission.PushHandlerActivity\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<permission android:name=\"${applicationId}.permission.C2D_MESSAGE\" android:protectionLevel=\"signature\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<permission android:name=\"${applicationId}.permission.PushHandlerActivity\" android:protectionLevel=\"signature\" />",
                             "count": 1
                         }
                     ],
                     "/manifest/application": [
                         {
-                            "xml": "<activity android:exported=\"true\" android:name=\"com.adobe.phonegap.push.PushHandlerActivity\" />",
+                            "xml": "<activity android:exported=\"true\" android:name=\"com.adobe.phonegap.push.PushHandlerActivity\" android:permission=\"${applicationId}.permission.PushHandlerActivity\" />",
                             "count": 1
                         },
                         {
@@ -71,7 +79,7 @@
                             "count": 1
                         },
                         {
-                            "xml": "<receiver android:exported=\"true\" android:name=\"com.google.android.gms.gcm.GcmReceiver\" android:permission=\"com.google.android.c2dm.permission.SEND\"><intent-filter><action android:name=\"com.google.android.c2dm.intent.RECEIVE\" /><category android:name=\"io.cordova.hellocordova\" /></intent-filter></receiver>",
+                            "xml": "<receiver android:exported=\"true\" android:name=\"com.google.android.gms.gcm.GcmReceiver\" android:permission=\"com.google.android.c2dm.permission.SEND\"><intent-filter><action android:name=\"com.google.android.c2dm.intent.RECEIVE\" /><category android:name=\"${applicationId}\" /></intent-filter></receiver>",
                             "count": 1
                         },
                         {
@@ -83,7 +91,7 @@
                             "count": 1
                         },
                         {
-                            "xml": "<service android:exported=\"false\" android:name=\"com.adobe.phonegap.push.RegistrationIntentService\"></service>",
+                            "xml": "<service android:exported=\"false\" android:name=\"com.adobe.phonegap.push.RegistrationIntentService\" />",
                             "count": 1
                         }
                     ]
@@ -96,7 +104,7 @@
             "PACKAGE_NAME": "io.cordova.hellocordova"
         },
         "phonegap-plugin-push": {
-            "SENDER_ID": "60315608913",
+            "SENDER_ID": "738883844373",
             "PACKAGE_NAME": "io.cordova.hellocordova"
         }
     },
@@ -113,6 +121,6 @@
     ],
     "plugin_metadata": {
         "cordova-plugin-whitelist": "1.3.1",
-        "phonegap-plugin-push": "1.6.0"
+        "phonegap-plugin-push": "1.9.4"
     }
 }

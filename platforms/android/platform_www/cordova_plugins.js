@@ -13,7 +13,7 @@ module.exports.metadata =
 // TOP OF METADATA
 {
     "cordova-plugin-whitelist": "1.3.1",
-    "phonegap-plugin-push": "1.6.0"
+    "phonegap-plugin-push": "1.9.4"
 };
 // BOTTOM OF METADATA
 });

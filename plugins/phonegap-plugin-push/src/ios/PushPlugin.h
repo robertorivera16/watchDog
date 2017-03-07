@@ -28,7 +28,8 @@
 #import <Cordova/CDVPlugin.h>
 
 @protocol GGLInstanceIDDelegate;
-@interface PushPlugin : CDVPlugin<GGLInstanceIDDelegate>
+@protocol GCMReceiverDelegate;
+@interface PushPlugin : CDVPlugin<GGLInstanceIDDelegate, GCMReceiverDelegate>
 {
     NSDictionary *notificationMessage;
     BOOL    isInline;
@@ -54,6 +55,8 @@
 
 - (void)init:(CDVInvokedUrlCommand*)command;
 - (void)unregister:(CDVInvokedUrlCommand*)command;
+- (void)subscribe:(CDVInvokedUrlCommand*)command;
+- (void)unsubscribe:(CDVInvokedUrlCommand*)command;
 
 - (void)didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken;
 - (void)didFailToRegisterForRemoteNotificationsWithError:(NSError *)error;
@@ -61,11 +64,17 @@
 - (void)setNotificationMessage:(NSDictionary *)notification;
 - (void)notificationReceived;
 
+- (void)willSendDataMessageWithID:(NSString *)messageID error:(NSError *)error;
+- (void)didSendDataMessageWithID:(NSString *)messageID;
+- (void)didDeleteMessagesOnServer;
+
 //  GCM Features
 @property(nonatomic, assign) BOOL usesGCM;
 @property(nonatomic, strong) NSNumber* gcmSandbox;
 @property(nonatomic, strong) NSString *gcmSenderId;
 @property(nonatomic, strong) NSDictionary *gcmRegistrationOptions;
 @property(nonatomic, strong) void (^gcmRegistrationHandler) (NSString *registrationToken, NSError *error);
+@property(nonatomic, strong) NSString *gcmRegistrationToken;
+@property(nonatomic, strong) NSArray *gcmTopics;
 
 @end
