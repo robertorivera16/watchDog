@@ -7,10 +7,10 @@
         "files": {}
     },
     "installed_plugins": {
-        "cordova-plugin-whitelist": {
+        "cordova-plugin-fcm": {
             "PACKAGE_NAME": "io.uprm.watchdog"
         },
-        "cordova-plugin-fcm": {
+        "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "io.uprm.watchdog"
         }
     },
