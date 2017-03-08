@@ -7,14 +7,12 @@
         "is_top_level": true,
         "variables": {}
     },
-    "phonegap-plugin-push": {
+    "cordova-plugin-fcm": {
         "source": {
             "type": "registry",
-            "id": "phonegap-plugin-push@1.9.4"
+            "id": "cordova-plugin-fcm"
         },
         "is_top_level": true,
-        "variables": {
-            "SENDER_ID": "738883844373"
-        }
+        "variables": {}
     }
 }

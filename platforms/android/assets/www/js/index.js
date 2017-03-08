@@ -27,6 +27,7 @@ var app = {
     // Bind any cordova events here. Common events are:
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
+        console.log("entered");
         this.receivedEvent('deviceready');
          var push = PushNotification.init({ "android": {"senderID": "738883844373"}});
 

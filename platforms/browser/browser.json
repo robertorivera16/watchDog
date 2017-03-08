@@ -10,24 +10,23 @@
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
         },
-        "phonegap-plugin-push": {
-            "SENDER_ID": "60315608913",
+        "cordova-plugin-fcm": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
         }
     },
     "dependent_plugins": {},
     "modules": [
         {
-            "file": "plugins/phonegap-plugin-push/www/push.js",
-            "id": "phonegap-plugin-push.PushNotification",
-            "pluginId": "phonegap-plugin-push",
+            "file": "plugins/cordova-plugin-fcm/www/FCMPlugin.js",
+            "id": "cordova-plugin-fcm.FCMPlugin",
+            "pluginId": "cordova-plugin-fcm",
             "clobbers": [
-                "PushNotification"
+                "FCMPlugin"
             ]
         }
     ],
     "plugin_metadata": {
         "cordova-plugin-whitelist": "1.3.1",
-        "phonegap-plugin-push": "1.6.0"
+        "cordova-plugin-fcm": "2.1.1"
     }
 }

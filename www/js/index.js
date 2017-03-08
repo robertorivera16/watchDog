@@ -23,27 +23,11 @@ var app = {
     },
 
     // deviceready Event Handler
-    // SENDER ID=738883844373
+    //
     // Bind any cordova events here. Common events are:
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
-        this.receivedEvent('deviceready');
-         var push = PushNotification.init({ "android": {"senderID": "738883844373"}});
 
-
-        push.on('registration', function(data) {
-            console.log(data.registrationId);
-            document.getElementById("gcm_id").value = data.registrationId;
-        });
-
-        push.on('notification', function(data) {
-            console.log(data.message);
-            alert(data.title+" Message: " +data.message);
-        });
-
-        push.on('error', function(e) {
-            alert(e);
-        });
     },
 
     // Update DOM on a Received Event
@@ -62,3 +46,19 @@ var app = {
 
 
 app.initialize();
+
+FCMPlugin.onTokenRefresh(function(token){
+    alert( token );
+});
+FCMPlugin.getToken(function(token){
+    alert(token);
+});
+FCMPlugin.onNotification(function(data){
+    if(data.wasTapped){
+        //Notification was received on device tray and tapped by the user.
+        alert( JSON.stringify(data) );
+    }else{
+        //Notification was received in foreground. Maybe the user needs to be notified.
+        alert( JSON.stringify(data) );
+    }
+});
