@@ -9,9 +9,6 @@
     "installed_plugins": {
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
-        },
-        "cordova-plugin-fcm": {
-            "PACKAGE_NAME": "io.uprm.watchdog"
         }
     },
     "dependent_plugins": {}
