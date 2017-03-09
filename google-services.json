@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "698118073801",
+    "firebase_url": "https://watchdogrum-80328.firebaseio.com",
+    "project_id": "watchdogrum-80328",
+    "storage_bucket": "watchdogrum-80328.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:698118073801:android:81c1fb48d9e30f3a",
+        "android_client_info": {
+          "package_name": "io.uprm.watchdog"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "698118073801-bitsosj0anahp0t8s2lfdhf8mn2jdis5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQv2T_2lPjpf4Ni1OUSSIrCRMtxm35U0s"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
