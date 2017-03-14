@@ -9,6 +9,9 @@
     "installed_plugins": {
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "io.uprm.watchdog"
+        },
+        "onesignal-cordova-plugin": {
+            "PACKAGE_NAME": "io.uprm.watchdog"
         }
     },
     "dependent_plugins": {}

@@ -7,17 +7,42 @@
         "files": {
             "config.xml": {
                 "parents": {
-                    "/*": []
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"OneSignalPush\"><param name=\"ios-package\" value=\"OneSignalPush\" /></feature>",
+                            "count": 1
+                        }
+                    ]
                 }
             },
-            "*/Entitlements-Debug.plist": {
+            "*-Info.plist": {
                 "parents": {
-                    "aps-environment": []
+                    "UIBackgroundModes": [
+                        {
+                            "xml": "<array><string>remote-notification</string></array>",
+                            "count": 1
+                        }
+                    ]
                 }
             },
-            "*/Entitlements-Release.plist": {
+            "*-Debug.plist": {
                 "parents": {
-                    "aps-environment": []
+                    "aps-environment": [
+                        {
+                            "xml": "<string>development</string>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "*-Release.plist": {
+                "parents": {
+                    "aps-environment": [
+                        {
+                            "xml": "<string>production</string>",
+                            "count": 1
+                        }
+                    ]
                 }
             }
         }
@@ -25,11 +50,24 @@
     "installed_plugins": {
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "io.uprm.watchdog"
+        },
+        "onesignal-cordova-plugin": {
+            "PACKAGE_NAME": "io.uprm.watchdog"
         }
     },
     "dependent_plugins": {},
-    "modules": [],
+    "modules": [
+        {
+            "id": "onesignal-cordova-plugin.OneSignal",
+            "file": "plugins/onesignal-cordova-plugin/www/OneSignal.js",
+            "pluginId": "onesignal-cordova-plugin",
+            "clobbers": [
+                "OneSignal"
+            ]
+        }
+    ],
     "plugin_metadata": {
-        "cordova-plugin-whitelist": "1.3.1"
+        "cordova-plugin-whitelist": "1.3.1",
+        "onesignal-cordova-plugin": "2.0.11"
     }
 }

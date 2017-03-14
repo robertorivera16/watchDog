@@ -19,7 +19,24 @@
 var app = {
     // Application Constructor
     initialize: function() {
-        document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
+        document.addEventListener('deviceready', function () {
+            // Enable to debug issues.
+            // window.plugins.OneSignal.setLogLevel({logLevel: 4, visualLevel: 4});
+
+            var notificationOpenedCallback = function(jsonData) {
+                alert("Notification received");
+            };
+
+            window.plugins.OneSignal
+                .startInit("eaacc69e-f021-4c36-8238-a810ab4072e7")
+                .handleNotificationOpened(notificationOpenedCallback)
+                .endInit();
+            window.plugins.OneSignal.setSubscription("true");
+
+            // Call syncHashedEmail anywhere in your app if you have the user's email.
+            // This improves the effectiveness of OneSignal's "best-time" notification scheduling feature.
+            // window.plugins.OneSignal.syncHashedEmail(userEmail);
+        }, false);
     },
 
     // deviceready Event Handler
@@ -27,7 +44,7 @@ var app = {
     // Bind any cordova events here. Common events are:
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
-        
+
     },
 
     // Update DOM on a Received Event
